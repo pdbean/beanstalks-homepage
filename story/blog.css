@@ -45,6 +45,13 @@
 .post-page .body p { margin-bottom:1.75em; }
 .post-page .body h2 { margin:2.6em 0 1em; font-family:"IBM Plex Sans KR",sans-serif; font-size:25px; font-weight:700; letter-spacing:-.035em; }
 .post-page .body li::marker { color:#74820f; }
+.post-page .related-products { margin-top:68px; padding:34px; color:#fff; background:var(--ink); }
+.post-page .related-kicker { margin:0 0 12px; color:var(--lime); font:700 9px Montserrat,sans-serif; letter-spacing:.18em; }
+.post-page .related-products h2 { margin:0 0 24px; font-family:"IBM Plex Sans KR",sans-serif; font-size:24px; letter-spacing:-.035em; }
+.post-page .related-links { display:flex; flex-direction:column; border-top:1px solid rgba(255,255,255,.18); }
+.post-page .related-links a { padding:17px 0; display:flex; align-items:center; justify-content:space-between; gap:20px; border-bottom:1px solid rgba(255,255,255,.18); color:#d8dcde; font-size:14px; font-weight:600; }
+.post-page .related-links a:hover { color:var(--lime); }
+.post-page .related-links span { color:var(--lime); }
 .post-page section.faq { margin-top:68px; }
 .post-page section.faq h2 { font-family:"IBM Plex Sans KR",sans-serif; font-size:23px; }
 .post-page section.faq summary::before { color:#74820f; }
@@ -62,4 +69,5 @@
   .blog-page .card a { padding:24px 20px; }
   .post-page article { padding-top:48px; }
   .post-page .body { font-size:16px; line-height:1.95; }
+  .post-page .related-products { padding:28px 22px; }
 }

@@ -188,14 +188,15 @@ nav.pn .next{text-align:right}
 
   function setMeta(post){
     var title = String(post.title || '이야기');
+    var seoTitle = title + ' | 빈스톡스';
     var desc = String(post.description || post.summary || '').slice(0, 160);
     var url = location.origin + location.pathname + '?id=' + encodeURIComponent(post.id || '');
     var author = String(post.author || '').trim();
-    document.title = title;
+    document.title = seoTitle;
     setAttr('meta[name="description"]', 'content', desc);
     setAttr('meta[name="author"]', 'content', author);
     setAttr('link[rel="canonical"]', 'href', url);
-    setAttr('meta[property="og:title"]', 'content', title);
+    setAttr('meta[property="og:title"]', 'content', seoTitle);
     setAttr('meta[property="og:description"]', 'content', desc);
     setAttr('meta[property="og:url"]', 'content', url);
 
@@ -264,6 +265,23 @@ nav.pn .next{text-align:right}
     return sec;
   }
 
+  function renderRelated(related){
+    var sec = el('section','related-products');
+    sec.appendChild(el('p','related-kicker','RELATED GEAR'));
+    sec.appendChild(el('h2', null, '관련 상품과 브랜드'));
+    var links = el('div','related-links');
+    related.forEach(function(item){
+      if (!item || !item.url) return;
+      var a = el('a', null, String(item.title || '자세히 보기'));
+      a.href = String(item.url);
+      a.appendChild(el('span', null, '↗'));
+      if (/^https?:\/\//i.test(String(item.url))) { a.target = '_blank'; a.rel = 'noopener'; }
+      links.appendChild(a);
+    });
+    sec.appendChild(links);
+    return sec;
+  }
+
   function render(posts){
     var qs = new URLSearchParams(location.search);
     var id = qs.get('id') || qs.get('slug');
@@ -296,6 +314,7 @@ nav.pn .next{text-align:right}
     art.appendChild(head);
     art.appendChild(el('hr','rule'));
     art.appendChild(renderBody(post.body));
+    if (Array.isArray(post.related) && post.related.length) art.appendChild(renderRelated(post.related));
     var faq = Array.isArray(post.faq) ? post.faq.filter(function(f){ return f && f.q && f.a; }) : [];
     if (faq.length) art.appendChild(renderFaq(faq));
     if (Array.isArray(post.sources) && post.sources.length) art.appendChild(renderSources(post.sources));
