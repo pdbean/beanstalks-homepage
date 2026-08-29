@@ -8,9 +8,14 @@ const setMenu = (open) => {
   document.body.classList.toggle('menu-open', open);
 };
 
-menuButton.addEventListener('click', () => setMenu(menuButton.getAttribute('aria-expanded') !== 'true'));
-mobileMenu.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setMenu(false)));
-window.addEventListener('scroll', () => header.classList.toggle('is-scrolled', window.scrollY > 40), { passive: true });
+if (menuButton && mobileMenu) {
+  menuButton.addEventListener('click', () => setMenu(menuButton.getAttribute('aria-expanded') !== 'true'));
+  mobileMenu.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setMenu(false)));
+}
+
+if (header) {
+  window.addEventListener('scroll', () => header.classList.toggle('is-scrolled', window.scrollY > 40), { passive: true });
+}
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
@@ -22,4 +27,5 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.12 });
 
 document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
-document.querySelector('#year').textContent = new Date().getFullYear();
+const year = document.querySelector('#year');
+if (year) year.textContent = new Date().getFullYear();
