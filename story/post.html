@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>이야기 | 빈스톡스</title>
-<meta name="description" content="">
+<title>바이크 가이드 | 빈스톡스</title>
+<meta name="description" content="헬멧과 바이크용품을 고를 때 필요한 정보를 초보 라이더도 이해하기 쉽게 설명하는 빈스톡스 가이드입니다.">
 <meta name="author" content="">
-<link rel="canonical" href="">
+<link rel="canonical" href="https://01beanstalks-homepage.vercel.app/story/">
 <meta property="og:type" content="article">
 <meta property="og:title" content="">
 <meta property="og:description" content="">
@@ -187,10 +187,11 @@ nav.pn .next{text-align:right}
   }
 
   function setMeta(post){
+    var siteOrigin = 'https://01beanstalks-homepage.vercel.app';
     var title = String(post.title || '이야기');
     var seoTitle = title + ' | 빈스톡스';
     var desc = String(post.description || post.summary || '').slice(0, 160);
-    var url = location.origin + location.pathname + '?id=' + encodeURIComponent(post.id || '');
+    var url = siteOrigin + '/story/post.html?id=' + encodeURIComponent(post.id || '');
     var author = String(post.author || '').trim();
     document.title = seoTitle;
     setAttr('meta[name="description"]', 'content', desc);
@@ -208,7 +209,9 @@ nav.pn .next{text-align:right}
       datePublished: String(post.date || ''),
       dateModified: String(post.updated || post.date || ''),
       mainEntityOfPage: url,
-      keywords: Array.isArray(post.tags) ? post.tags.map(String).join(', ') : ''
+      keywords: Array.isArray(post.tags) ? post.tags.map(String).join(', ') : '',
+      inLanguage: 'ko-KR',
+      publisher: { '@type': 'Organization', name: '빈스톡스', url: siteOrigin + '/' }
     };
     if (author) article.author = { '@type': 'Person', name: author };
     addLd(article);
@@ -228,7 +231,7 @@ nav.pn .next{text-align:right}
       '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: '이야기', item: location.origin + location.pathname.replace(/post\.html$/, '') },
+        { '@type': 'ListItem', position: 1, name: '이야기', item: siteOrigin + '/story/' },
         { '@type': 'ListItem', position: 2, name: title, item: url }
       ]
     });
