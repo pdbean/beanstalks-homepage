@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /story/admin.html
 
-Sitemap: https://01beanstalks-homepage.vercel.app/sitemap.xml
+Sitemap: https://beanstalks.kr/sitemap.xml

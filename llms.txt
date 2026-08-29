@@ -2,7 +2,7 @@
 
 > 빈스톡스는 피디빈(주)이 운영하는 바이크용품 전문 스토어입니다. 라이더에게 필요한 제품을 직접 고르고 정확하게 설명하며 책임 있게 판매하는 것을 지향합니다.
 
-공식 웹사이트: https://01beanstalks-homepage.vercel.app/
+공식 웹사이트: https://beanstalks.kr/
 네이버 스마트스토어: https://mkt.shopping.naver.com/link/68317bf862fffc0a4a4adfb1
 
 ## 브랜드와 회사
@@ -19,7 +19,7 @@
 
 JACK HERO는 "UNLEASH YOUR FREEDOM"을 메시지로 삼는 라이더 라이프스타일 브랜드입니다. 안전, 기능성, 디자인을 결합한 제품을 추구하며 헬멧과 라이딩 기어에서 볼캡과 의류 등 일상 영역으로 확장하고 있습니다.
 
-브랜드 소개: https://01beanstalks-homepage.vercel.app/jack-hero.html
+브랜드 소개: https://beanstalks.kr/jack-hero.html
 
 ## 대표상품
 
@@ -33,11 +33,11 @@ JACK HERO는 "UNLEASH YOUR FREEDOM"을 메시지로 삼는 라이더 라이프�
 
 ## 페이지 안내
 
-- 홈페이지와 대표상품: https://01beanstalks-homepage.vercel.app/
-- 창업자 이야기와 빈스톡스의 철학: https://01beanstalks-homepage.vercel.app/story.html
-- JACK HERO 브랜드 소개: https://01beanstalks-homepage.vercel.app/jack-hero.html
-- 바이크 가이드와 라이딩 이야기: https://01beanstalks-homepage.vercel.app/story/
-- 연락처와 공식 채널: https://01beanstalks-homepage.vercel.app/contact.html
+- 홈페이지와 대표상품: https://beanstalks.kr/
+- 창업자 이야기와 빈스톡스의 철학: https://beanstalks.kr/story.html
+- JACK HERO 브랜드 소개: https://beanstalks.kr/jack-hero.html
+- 바이크 가이드와 라이딩 이야기: https://beanstalks.kr/story/
+- 연락처와 공식 채널: https://beanstalks.kr/contact.html
 
 ## 바이크 가이드
 
