@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>이야기 | 빈스톡스</title>
+<meta name="description" content="제품 뒤의 생각과 만드는 과정, 더 나은 라이딩을 위한 빈스톡스의 기록입니다.">
+<meta name="theme-color" content="#0b0e11">
+<link rel="stylesheet" href="../styles.css">
+<script src="../script.js" defer></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#faf9f6;
+  --ink:#1c1b18;
+  --accent:#8a5a2b;
+  --muted:#8b877e;
+  --serif:'Noto Serif KR',Georgia,serif;
+  --sans:'Pretendard','Apple SD Gothic Neo','Noto Sans KR',system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.7;
+  -webkit-font-smoothing:antialiased;min-height:100vh}
+.story-wrap{max-width:680px;margin:0 auto;padding:0 24px 96px}
+header.site{display:flex;justify-content:space-between;align-items:baseline;
+  padding:48px 0 0}
+header.site .admin-link{font-size:12px;color:var(--muted);text-decoration:none;
+  letter-spacing:.04em;border-bottom:1px solid transparent}
+header.site .admin-link:hover{color:var(--accent);border-bottom-color:var(--accent)}
+.hero{padding:72px 0 56px;border-bottom:1px solid rgba(0,0,0,.08)}
+.hero .eyebrow{font-size:12px;letter-spacing:.28em;color:var(--accent);
+  text-transform:uppercase;margin-bottom:16px}
+.hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(28px,6vw,40px);
+  letter-spacing:-.01em;line-height:1.3}
+.hero p{margin-top:14px;color:var(--muted);font-size:15px}
+.list{list-style:none;padding-top:8px}
+.card{border-bottom:1px solid rgba(0,0,0,.08)}
+.card a{display:block;text-decoration:none;color:inherit;padding:36px 8px;
+  margin:0 -8px;border-radius:10px;transition:background .18s ease,transform .18s ease}
+.card a:hover{background:rgba(0,0,0,.028);transform:translateX(4px)}
+.card time{font-size:12.5px;color:var(--muted);letter-spacing:.06em}
+.card h2{font-family:var(--serif);font-weight:600;font-size:21px;line-height:1.45;
+  margin:8px 0 10px;transition:color .18s ease}
+.card a:hover h2{color:var(--accent)}
+.card .summary{font-size:14.5px;color:var(--muted);line-height:1.75;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.tags{margin-top:14px;display:flex;gap:6px;flex-wrap:wrap}
+.tag{font-size:11.5px;color:var(--accent);border:1px solid color-mix(in srgb,var(--accent) 35%,transparent);
+  border-radius:999px;padding:2px 10px;letter-spacing:.03em}
+.empty,.error{padding:96px 0;text-align:center;color:var(--muted);font-size:15px}
+.empty strong{display:block;font-family:var(--serif);font-size:19px;color:var(--ink);
+  margin-bottom:10px;font-weight:600}
+@media (max-width:480px){
+  .hero{padding:56px 0 40px}
+  .card a{padding:28px 4px;margin:0 -4px}
+}
+</style>
+<link rel="stylesheet" href="blog.css">
+</head>
+<!-- ═══════════════════════════════════════════════════════════
+     이 파일은 "혼자서도 열리는" 독립 페이지입니다.
+     내 사이트에 이식할 때는 아래 두 슬롯을 반드시 채우세요.
+       ① HEADER 슬롯 : 홈페이지의 로고 + 네비게이션 + 모바일 메뉴를 그대로 복사
+       ② FOOTER 슬롯 : 홈페이지의 푸터를 그대로 복사
+     색·서체는 :root 의 CSS 변수를 홈페이지 값으로 바꾸면 됩니다.
+     (본문 폭 --- .wrap 의 max-width 680px --- 은 가독성을 위해 유지 권장)
+     ═══════════════════════════════════════════════════════════ -->
+<body class="blog-page">
+
+<a class="skip-link" href="#story-list">본문 바로가기</a>
+<header class="site-header" id="site-header">
+  <a class="brand" href="../index.html" aria-label="빈스톡스 홈"><span class="brand-mark">B</span><span>BEANSTALKS</span></a>
+  <nav class="desktop-nav" aria-label="주요 메뉴"><a href="../story.html">내 소개</a><a href="../index.html#products">대표상품</a><a href="../jack-hero.html">JACK HERO</a><a href="index.html" aria-current="page">이야기</a><a href="../index.html#faq">FAQ</a></nav>
+  <a class="header-shop" href="https://mkt.shopping.naver.com/link/68317bf862fffc0a4a4adfb1" target="_blank" rel="noopener">스토어 가기 <span aria-hidden="true">↗</span></a>
+  <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="메뉴 열기"><span></span><span></span></button>
+</header>
+<nav class="mobile-menu" id="mobile-menu" aria-label="모바일 메뉴">
+  <a href="../story.html">내 소개</a><a href="../index.html#products">대표상품</a><a href="../jack-hero.html">JACK HERO</a><a href="index.html" aria-current="page">이야기</a><a href="../index.html#faq">FAQ</a>
+  <a class="mobile-store" href="https://mkt.shopping.naver.com/link/68317bf862fffc0a4a4adfb1" target="_blank" rel="noopener">네이버 스마트스토어 ↗</a>
+</nav>
+
+<main class="story-wrap" id="story-list">
+  <header class="site">
+    <span aria-hidden="true"></span>
+    <a class="admin-link" href="admin.html">관리</a>
+  </header>
+  <section class="hero">
+    <p class="eyebrow">Story</p>
+    <h1>브랜드 이야기</h1>
+    <p>만드는 사람들의 기록을 천천히 쌓아갑니다.</p>
+  </section>
+  <ul class="list" id="list"></ul>
+</main>
+<script>
+(function(){
+  var list = document.getElementById('list');
+
+  function el(tag, cls, text){
+    var n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text != null) n.textContent = text;
+    return n;
+  }
+
+  function fmtDate(s){
+    var d = new Date(s + 'T00:00:00');
+    if (isNaN(d)) return s || '';
+    return d.getFullYear() + '. ' + (d.getMonth()+1) + '. ' + d.getDate() + '.';
+  }
+
+  function render(posts){
+    if (!Array.isArray(posts) || posts.length === 0){
+      var empty = el('div','empty');
+      empty.appendChild(el('strong', null, '아직 올라온 글이 없습니다'));
+      empty.appendChild(document.createTextNode('첫 번째 이야기를 준비하고 있어요. 곧 만나요.'));
+      list.replaceWith(empty);
+      return;
+    }
+    posts = posts.slice().sort(function(a,b){
+      return String(b.date||'').localeCompare(String(a.date||''));
+    });
+    posts.forEach(function(p){
+      var li = el('li','card');
+      var a = el('a');
+      a.href = p.url ? String(p.url) : 'post.html?id=' + encodeURIComponent(p.id || '');
+      var t = el('time', null, fmtDate(p.date));
+      t.setAttribute('datetime', String(p.date||''));
+      a.appendChild(t);
+      a.appendChild(el('h2', null, String(p.title || '(제목 없음)')));
+      if (p.summary) a.appendChild(el('p','summary', String(p.summary)));
+      if (Array.isArray(p.tags) && p.tags.length){
+        var tags = el('div','tags');
+        p.tags.forEach(function(tg){ tags.appendChild(el('span','tag', String(tg))); });
+        a.appendChild(tags);
+      }
+      li.appendChild(a);
+      list.appendChild(li);
+    });
+  }
+
+  fetch('posts.json', {cache:'no-store'})
+    .then(function(r){ if(!r.ok) throw new Error(r.status); return r.json(); })
+    .then(render)
+    .catch(function(){
+      list.replaceWith(el('div','error','글 목록을 불러오지 못했습니다. 잠시 후 새로고침해 주세요.'));
+    });
+})();
+</script>
+
+<footer class="site-footer"><div class="wrap footer-top"><div><a class="brand" href="../index.html"><span class="brand-mark">B</span><span>BEANSTALKS</span></a><p>라이더의 기준을 높이는 바이크 기어 셀렉트숍.</p></div><div class="footer-info"><p><b>고객센터</b><span>0000-0000</span></p><p><b>운영시간</b><span>평일 10:00–17:00<br>점심 12:00–13:00</span></p><p><b>문의</b><span>hello@beanstalks.co.kr</span></p><p><b>스토어</b><span><a href="https://mkt.shopping.naver.com/link/68317bf862fffc0a4a4adfb1" target="_blank" rel="noopener">네이버 스마트스토어 ↗</a></span></p></div></div><div class="wrap footer-bottom"><p>상호명 빈스톡스 · 대표자 홍길동 · 사업자등록번호 000-00-00000 · 통신판매업 신고번호 제0000-서울0000호</p><p>© <span id="year"></span> BEANSTALKS. ALL RIGHTS RESERVED.</p></div></footer>
+
+</body>
+</html>

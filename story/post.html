@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>이야기 | 빈스톡스</title>
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="canonical" href="">
+<meta property="og:type" content="article">
+<meta property="og:title" content="">
+<meta property="og:description" content="">
+<meta property="og:url" content="">
+<meta name="theme-color" content="#0b0e11">
+<link rel="stylesheet" href="../styles.css">
+<script src="../script.js" defer></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#faf9f6;
+  --ink:#1c1b18;
+  --accent:#8a5a2b;
+  --muted:#8b877e;
+  --serif:'Noto Serif KR',Georgia,serif;
+  --sans:'Pretendard','Apple SD Gothic Neo','Noto Sans KR',system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.7;
+  -webkit-font-smoothing:antialiased;min-height:100vh}
+.story-wrap{max-width:680px;margin:0 auto;padding:0 24px 110px}
+.top{padding:44px 0 0}
+.back{font-size:13px;color:var(--muted);text-decoration:none;letter-spacing:.03em}
+.back:hover{color:var(--accent)}
+article{padding-top:56px}
+.post-head time{font-size:13px;color:var(--muted);letter-spacing:.06em}
+.post-head h1{font-family:var(--serif);font-weight:600;
+  font-size:clamp(26px,5.6vw,36px);line-height:1.4;letter-spacing:-.01em;
+  margin:12px 0 18px}
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.tag{font-size:11.5px;color:var(--accent);border:1px solid color-mix(in srgb,var(--accent) 35%,transparent);
+  border-radius:999px;padding:2px 10px;letter-spacing:.03em}
+.rule{border:none;border-top:1px solid rgba(0,0,0,.1);margin:36px 0 40px;width:48px}
+.body{font-size:16.5px;line-height:1.95}
+.body p{margin-bottom:1.6em}
+.body h2{font-family:var(--serif);font-weight:600;font-size:21px;line-height:1.5;
+  margin:2.2em 0 .9em;letter-spacing:-.005em}
+.body ul{margin:0 0 1.6em 1.2em}
+.body li{margin-bottom:.45em}
+.body li::marker{color:var(--accent)}
+.post-head .meta{font-size:13px;color:var(--muted);margin-top:2px}
+.post-head .meta span+span::before{content:" · ";}
+section.faq{margin-top:56px}
+section.faq h2{font-family:var(--serif);font-weight:600;font-size:20px;margin-bottom:14px}
+section.faq details{border-top:1px solid rgba(0,0,0,.08);padding:14px 0}
+section.faq details:last-of-type{border-bottom:1px solid rgba(0,0,0,.08)}
+section.faq summary{cursor:pointer;font-weight:600;font-size:15.5px;list-style:none}
+section.faq summary::-webkit-details-marker{display:none}
+section.faq summary::before{content:"Q. ";color:var(--accent)}
+section.faq details p{margin:10px 0 0;font-size:15px;line-height:1.8;color:#3d3a34}
+section.sources{margin-top:40px;font-size:13.5px;color:var(--muted)}
+section.sources h2{font-size:13px;letter-spacing:.08em;font-weight:600;margin-bottom:8px}
+section.sources ol{margin-left:1.2em}
+section.sources a{color:inherit}
+nav.pn{margin-top:72px;border-top:1px solid rgba(0,0,0,.08);
+  display:grid;grid-template-columns:1fr 1fr;gap:16px;padding-top:8px}
+nav.pn a{display:block;text-decoration:none;color:inherit;padding:22px 4px;
+  border-radius:8px;transition:background .18s ease;min-width:0}
+nav.pn a:hover{background:rgba(0,0,0,.03)}
+nav.pn .dir{font-size:11.5px;color:var(--muted);letter-spacing:.1em;margin-bottom:6px}
+nav.pn .pn-title{font-family:var(--serif);font-size:15px;font-weight:600;line-height:1.5;
+  overflow:hidden;text-overflow:ellipsis;display:-webkit-box;
+  -webkit-line-clamp:2;-webkit-box-orient:vertical}
+nav.pn a:hover .pn-title{color:var(--accent)}
+nav.pn .next{text-align:right}
+.notfound{padding:120px 0;text-align:center}
+.notfound h1{font-family:var(--serif);font-size:22px;font-weight:600;margin-bottom:14px}
+.notfound p{color:var(--muted);font-size:15px;margin-bottom:28px}
+.notfound a{color:var(--accent);text-decoration:none;font-size:14px;
+  border-bottom:1px solid currentColor;padding-bottom:2px}
+@media (max-width:480px){
+  article{padding-top:44px}
+  nav.pn{grid-template-columns:1fr}
+  nav.pn .next{text-align:left}
+}
+</style>
+<link rel="stylesheet" href="blog.css">
+</head>
+<!-- ═══════════════════════════════════════════════════════════
+     이 파일은 "혼자서도 열리는" 독립 페이지입니다.
+     내 사이트에 이식할 때는 아래 두 슬롯을 반드시 채우세요.
+       ① HEADER 슬롯 : 홈페이지의 로고 + 네비게이션 + 모바일 메뉴를 그대로 복사
+       ② FOOTER 슬롯 : 홈페이지의 푸터를 그대로 복사
+     색·서체는 :root 의 CSS 변수를 홈페이지 값으로 바꾸면 됩니다.
+     (본문 폭 --- .wrap 의 max-width 680px --- 은 가독성을 위해 유지 권장)
+
+     ③ 검색·AI 노출(SEO/AEO/GEO) 메모
+       이 페이지는 posts.json 을 브라우저에서 읽어 그립니다. Google 은 읽지만
+       ChatGPT·Perplexity 같은 AI 크롤러는 JS 를 실행하지 않아 글이 비어 보입니다.
+       그래서 글마다 정적 파일(story/<slug>.html — 이 파일을 복제해 본문·메타·JSON-LD 를
+       HTML 에 직접 써 넣은 것)을 두고, posts.json 의 해당 글에 "url": "<slug>.html" 을
+       적어 주면 목록·홈 카드가 그 정적 페이지로 연결됩니다. (팁③ 예약 작업이 이 일을 매일 합니다)
+       posts.json 글 필드: id·title·date·summary·tags·body (필수)
+                          url·description·author·updated·faq[{q,a}]·sources[{title,url}] (선택)
+     ═══════════════════════════════════════════════════════════ -->
+<body class="blog-page post-page">
+
+<a class="skip-link" href="#main">본문 바로가기</a>
+<header class="site-header" id="site-header">
+  <a class="brand" href="../index.html" aria-label="빈스톡스 홈"><span class="brand-mark">B</span><span>BEANSTALKS</span></a>
+  <nav class="desktop-nav" aria-label="주요 메뉴"><a href="../story.html">내 소개</a><a href="../index.html#products">대표상품</a><a href="../jack-hero.html">JACK HERO</a><a href="index.html" aria-current="page">이야기</a><a href="../index.html#faq">FAQ</a></nav>
+  <a class="header-shop" href="https://mkt.shopping.naver.com/link/68317bf862fffc0a4a4adfb1" target="_blank" rel="noopener">스토어 가기 <span aria-hidden="true">↗</span></a>
+  <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="메뉴 열기"><span></span><span></span></button>
+</header>
+<nav class="mobile-menu" id="mobile-menu" aria-label="모바일 메뉴">
+  <a href="../story.html">내 소개</a><a href="../index.html#products">대표상품</a><a href="../jack-hero.html">JACK HERO</a><a href="index.html" aria-current="page">이야기</a><a href="../index.html#faq">FAQ</a>
+  <a class="mobile-store" href="https://mkt.shopping.naver.com/link/68317bf862fffc0a4a4adfb1" target="_blank" rel="noopener">네이버 스마트스토어 ↗</a>
+</nav>
+
+<div class="story-wrap">
+  <div class="top"><a class="back" href="index.html">&larr; 목록으로</a></div>
+  <main id="main"></main>
+</div>
+<script>
+(function(){
+  var main = document.getElementById('main');
+
+  function el(tag, cls, text){
+    var n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text != null) n.textContent = text;
+    return n;
+  }
+
+  function fmtDate(s){
+    var d = new Date(s + 'T00:00:00');
+    if (isNaN(d)) return s || '';
+    return d.getFullYear() + '. ' + (d.getMonth()+1) + '. ' + d.getDate() + '.';
+  }
+
+  // 초경량 마크다운: 빈 줄=문단, "## "=소제목, "- "=리스트. 전부 textContent로 삽입(XSS-safe).
+  function renderBody(src){
+    var box = el('div','body');
+    var blocks = String(src || '').replace(/\r\n/g,'\n').split(/\n\s*\n/);
+    blocks.forEach(function(block){
+      block = block.trim();
+      if (!block) return;
+      var lines = block.split('\n');
+      if (lines.every(function(l){ return /^- /.test(l.trim()); })){
+        var ul = el('ul');
+        lines.forEach(function(l){ ul.appendChild(el('li', null, l.trim().slice(2))); });
+        box.appendChild(ul);
+      } else if (/^## /.test(block)){
+        box.appendChild(el('h2', null, block.slice(3).trim()));
+      } else {
+        box.appendChild(el('p', null, block));
+      }
+    });
+    return box;
+  }
+
+  function notFound(){
+    var d = el('div','notfound');
+    d.appendChild(el('h1', null, '글을 찾을 수 없습니다'));
+    d.appendChild(el('p', null, '주소가 잘못되었거나 삭제된 글일 수 있어요.'));
+    var a = el('a', null, '글 목록으로 돌아가기');
+    a.href = 'index.html';
+    d.appendChild(a);
+    main.appendChild(d);
+  }
+
+  function hrefOf(p){
+    return p.url ? String(p.url) : 'post.html?id=' + encodeURIComponent(p.id || '');
+  }
+
+  function setAttr(sel, attr, val){
+    var n = document.querySelector(sel);
+    if (n) n.setAttribute(attr, val);
+  }
+
+  function addLd(obj){
+    var ld = document.createElement('script');
+    ld.type = 'application/ld+json';
+    ld.textContent = JSON.stringify(obj);
+    document.head.appendChild(ld);
+  }
+
+  function setMeta(post){
+    var title = String(post.title || '이야기');
+    var desc = String(post.description || post.summary || '').slice(0, 160);
+    var url = location.origin + location.pathname + '?id=' + encodeURIComponent(post.id || '');
+    var author = String(post.author || '').trim();
+    document.title = title;
+    setAttr('meta[name="description"]', 'content', desc);
+    setAttr('meta[name="author"]', 'content', author);
+    setAttr('link[rel="canonical"]', 'href', url);
+    setAttr('meta[property="og:title"]', 'content', title);
+    setAttr('meta[property="og:description"]', 'content', desc);
+    setAttr('meta[property="og:url"]', 'content', url);
+
+    var article = {
+      '@context': 'https://schema.org',
+      '@type': 'BlogPosting',
+      headline: title,
+      description: desc,
+      datePublished: String(post.date || ''),
+      dateModified: String(post.updated || post.date || ''),
+      mainEntityOfPage: url,
+      keywords: Array.isArray(post.tags) ? post.tags.map(String).join(', ') : ''
+    };
+    if (author) article.author = { '@type': 'Person', name: author };
+    addLd(article);
+
+    var faq = Array.isArray(post.faq) ? post.faq.filter(function(f){ return f && f.q && f.a; }) : [];
+    if (faq.length){
+      addLd({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: faq.map(function(f){
+          return { '@type': 'Question', name: String(f.q),
+                   acceptedAnswer: { '@type': 'Answer', text: String(f.a) } };
+        })
+      });
+    }
+    addLd({
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: '이야기', item: location.origin + location.pathname.replace(/post\.html$/, '') },
+        { '@type': 'ListItem', position: 2, name: title, item: url }
+      ]
+    });
+  }
+
+  function renderFaq(faq){
+    var sec = el('section','faq');
+    sec.appendChild(el('h2', null, '자주 묻는 질문'));
+    faq.forEach(function(f){
+      var d = el('details');
+      d.appendChild(el('summary', null, String(f.q)));
+      d.appendChild(el('p', null, String(f.a)));
+      sec.appendChild(d);
+    });
+    return sec;
+  }
+
+  function renderSources(sources){
+    var sec = el('section','sources');
+    sec.appendChild(el('h2', null, '참고·출처'));
+    var ol = el('ol');
+    sources.forEach(function(s){
+      var li = el('li');
+      if (s && s.url){
+        var a = el('a', null, String(s.title || s.url));
+        a.href = String(s.url); a.rel = 'noopener'; a.target = '_blank';
+        li.appendChild(a);
+      } else {
+        li.textContent = String(s && s.title || s || '');
+      }
+      ol.appendChild(li);
+    });
+    sec.appendChild(ol);
+    return sec;
+  }
+
+  function render(posts){
+    var qs = new URLSearchParams(location.search);
+    var id = qs.get('id') || qs.get('slug');
+    posts = (Array.isArray(posts) ? posts : []).slice().sort(function(a,b){
+      return String(b.date||'').localeCompare(String(a.date||''));
+    });
+    var idx = -1;
+    posts.forEach(function(p,i){ if (String(p.id) === id || (p.url && String(p.url).replace(/\.html$/,'') === id)) idx = i; });
+    if (idx < 0){ notFound(); return; }
+    var post = posts[idx];
+    setMeta(post);
+
+    var art = el('article');
+    var head = el('header','post-head');
+    var t = el('time', null, fmtDate(post.date));
+    t.setAttribute('datetime', String(post.date||''));
+    head.appendChild(t);
+    head.appendChild(el('h1', null, String(post.title || '(제목 없음)')));
+    if (post.author || (post.updated && post.updated !== post.date)){
+      var meta = el('div','meta');
+      if (post.author) meta.appendChild(el('span', null, String(post.author)));
+      if (post.updated && post.updated !== post.date) meta.appendChild(el('span', null, '수정 ' + fmtDate(post.updated)));
+      head.appendChild(meta);
+    }
+    if (Array.isArray(post.tags) && post.tags.length){
+      var tags = el('div','tags');
+      post.tags.forEach(function(tg){ tags.appendChild(el('span','tag', String(tg))); });
+      head.appendChild(tags);
+    }
+    art.appendChild(head);
+    art.appendChild(el('hr','rule'));
+    art.appendChild(renderBody(post.body));
+    var faq = Array.isArray(post.faq) ? post.faq.filter(function(f){ return f && f.q && f.a; }) : [];
+    if (faq.length) art.appendChild(renderFaq(faq));
+    if (Array.isArray(post.sources) && post.sources.length) art.appendChild(renderSources(post.sources));
+
+    var prev = posts[idx+1]; // 더 오래된 글
+    var next = posts[idx-1]; // 더 최신 글
+    if (prev || next){
+      var nav = el('nav','pn');
+      function cell(p, cls, label){
+        if (!p){ nav.appendChild(el('span')); return; }
+        var a = el('a', cls);
+        a.href = hrefOf(p);
+        a.appendChild(el('div','dir', label));
+        a.appendChild(el('div','pn-title', String(p.title || '')));
+        nav.appendChild(a);
+      }
+      cell(prev, 'prev', '이전 글');
+      cell(next, 'next', '다음 글');
+      art.appendChild(nav);
+    }
+    main.appendChild(art);
+  }
+
+  fetch('posts.json', {cache:'no-store'})
+    .then(function(r){ if(!r.ok) throw new Error(r.status); return r.json(); })
+    .then(render)
+    .catch(function(){ notFound(); });
+})();
+</script>
+
+<footer class="site-footer"><div class="wrap footer-top"><div><a class="brand" href="../index.html"><span class="brand-mark">B</span><span>BEANSTALKS</span></a><p>라이더의 기준을 높이는 바이크 기어 셀렉트숍.</p></div><div class="footer-info"><p><b>고객센터</b><span>0000-0000</span></p><p><b>운영시간</b><span>평일 10:00–17:00<br>점심 12:00–13:00</span></p><p><b>문의</b><span>hello@beanstalks.co.kr</span></p><p><b>스토어</b><span><a href="https://mkt.shopping.naver.com/link/68317bf862fffc0a4a4adfb1" target="_blank" rel="noopener">네이버 스마트스토어 ↗</a></span></p></div></div><div class="wrap footer-bottom"><p>상호명 빈스톡스 · 대표자 홍길동 · 사업자등록번호 000-00-00000 · 통신판매업 신고번호 제0000-서울0000호</p><p>© <span id="year"></span> BEANSTALKS. ALL RIGHTS RESERVED.</p></div></footer>
+
+</body>
+</html>

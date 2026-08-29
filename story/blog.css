@@ -1,0 +1,65 @@
+:root {
+  --bg:#f2f3ef;
+  --ink:#0b0e11;
+  --accent:#74820f;
+  --muted:#687078;
+  --serif:"IBM Plex Sans KR",sans-serif;
+  --sans:"IBM Plex Sans KR",sans-serif;
+}
+
+.blog-page { background:var(--bg); color:var(--ink); font-family:"IBM Plex Sans KR",sans-serif; }
+.blog-page .site-header { color:#fff; }
+.blog-page .desktop-nav a[aria-current="page"] { color:var(--lime); }
+.blog-page .story-wrap { width:min(680px,calc(100% - 40px)); padding:88px 0 110px; }
+.blog-page header.site { padding-top:32px; }
+.blog-page header.site .admin-link { padding:8px 0; color:#767e84; font-size:11px; font-weight:700; letter-spacing:.12em; }
+.blog-page header.site .admin-link:hover { color:var(--ink); border-bottom-color:var(--ink); }
+.blog-page .hero { min-height:0; padding:84px 0 62px; display:block; overflow:visible; color:var(--ink); background:none; border-bottom:2px solid var(--ink); }
+.blog-page .hero .eyebrow { margin-bottom:20px; color:#74820f; font:700 10px Montserrat,sans-serif; letter-spacing:.23em; }
+.blog-page .hero h1 { margin:0; font-family:"IBM Plex Sans KR",sans-serif; font-size:clamp(42px,7vw,64px); font-weight:700; line-height:1.12; letter-spacing:-.055em; }
+.blog-page .hero p { margin-top:18px; color:#687078; font-size:15px; }
+.blog-page .list { padding-top:18px; }
+.blog-page .card { margin-top:18px; border:1px solid #daddd7; background:#fff; }
+.blog-page .card a { margin:0; padding:30px; border-radius:0; }
+.blog-page .card a:hover { background:#0b0e11; color:#fff; transform:none; }
+.blog-page .card time { color:#7c8489; font:700 10px Montserrat,sans-serif; letter-spacing:.13em; }
+.blog-page .card h2 { margin:13px 0 12px; font-family:"IBM Plex Sans KR",sans-serif; font-size:clamp(20px,3vw,25px); font-weight:700; line-height:1.45; letter-spacing:-.035em; }
+.blog-page .card a:hover h2 { color:var(--lime); }
+.blog-page .card .summary { color:#6c747a; font-size:14px; line-height:1.8; }
+.blog-page .card a:hover .summary { color:#b5bcc0; }
+.blog-page .tags { margin-top:18px; }
+.blog-page .tag { padding:4px 9px; color:#74820f; border:1px solid #b9c26f; border-radius:0; font:700 9px Montserrat,sans-serif; letter-spacing:.1em; }
+.blog-page .card a:hover .tag { color:var(--lime); border-color:rgba(216,255,62,.5); }
+.blog-page .empty,.blog-page .error { color:#687078; }
+
+.post-page .story-wrap { padding-top:88px; }
+.post-page .top { padding-top:44px; }
+.post-page .back { display:inline-flex; padding-bottom:8px; color:#687078; border-bottom:1px solid #aeb3b5; font-size:12px; font-weight:700; }
+.post-page .back:hover { color:var(--ink); border-bottom-color:var(--ink); }
+.post-page article { padding-top:68px; }
+.post-page .post-head time { color:#74820f; font:700 10px Montserrat,sans-serif; letter-spacing:.15em; }
+.post-page .post-head h1 { margin:18px 0 22px; font-family:"IBM Plex Sans KR",sans-serif; font-size:clamp(34px,6vw,52px); font-weight:700; line-height:1.28; letter-spacing:-.055em; }
+.post-page .post-head .meta { color:#798087; }
+.post-page .rule { width:72px; margin:40px 0 48px; border-top:3px solid var(--ink); }
+.post-page .body { font-size:17px; line-height:2; }
+.post-page .body p { margin-bottom:1.75em; }
+.post-page .body h2 { margin:2.6em 0 1em; font-family:"IBM Plex Sans KR",sans-serif; font-size:25px; font-weight:700; letter-spacing:-.035em; }
+.post-page .body li::marker { color:#74820f; }
+.post-page section.faq { margin-top:68px; }
+.post-page section.faq h2 { font-family:"IBM Plex Sans KR",sans-serif; font-size:23px; }
+.post-page section.faq summary::before { color:#74820f; }
+.post-page nav.pn { margin-top:80px; border-top:2px solid var(--ink); }
+.post-page nav.pn a { border-radius:0; }
+.post-page nav.pn a:hover { background:#fff; }
+.post-page nav.pn .pn-title { font-family:"IBM Plex Sans KR",sans-serif; }
+.post-page nav.pn a:hover .pn-title { color:#74820f; }
+.post-page .notfound a { color:#74820f; }
+
+@media (max-width:640px) {
+  .blog-page .story-wrap { width:min(100% - 36px,680px); padding-top:72px; }
+  .blog-page header.site { padding-top:22px; }
+  .blog-page .hero { padding:58px 0 42px; }
+  .blog-page .card a { padding:24px 20px; }
+  .post-page article { padding-top:48px; }
+  .post-page .body { font-size:16px; line-height:1.95; }
+}

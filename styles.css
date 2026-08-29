@@ -170,6 +170,19 @@ h1 em { color:transparent; -webkit-text-stroke:1px rgba(255,255,255,.82); font-s
 .guide-body a { margin-top:30px; padding-bottom:7px; border-bottom:1px solid var(--ink); font-size:13px; font-weight:700; }
 .guide-body a span { margin-left:25px; }
 
+.home-stories { background:#fff; }
+.home-story-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+.home-story-card { min-height:310px; display:flex; flex-direction:column; padding:30px; border:1px solid var(--line); background:var(--paper); transition:transform .25s,background .25s,color .25s; }
+.home-story-card:hover { color:#fff; background:var(--ink); transform:translateY(-5px); }
+.home-story-card time { color:#7b8389; font:700 10px Montserrat,sans-serif; letter-spacing:.13em; }
+.home-story-card h3 { margin:45px 0 15px; font-size:clamp(20px,2vw,27px); line-height:1.45; letter-spacing:-.04em; }
+.home-story-card p { margin:0; color:#687078; font-size:14px; line-height:1.8; }
+.home-story-card:hover time { color:var(--lime); }
+.home-story-card:hover p { color:#aeb5b9; }
+.home-story-card .story-arrow { margin-top:auto; padding-top:28px; color:#7b8389; font:700 11px Montserrat,sans-serif; }
+.home-story-card:hover .story-arrow { color:var(--lime); }
+.story-loading,.story-error { grid-column:1/-1; margin:0; padding:60px 0; color:var(--muted); text-align:center; }
+
 .faq { background:var(--paper); }
 .faq-grid { display:grid; grid-template-columns:.75fr 1.25fr; gap:9vw; }
 .faq .section-heading>p:not(.kicker) { max-width:300px; margin:25px 0 0; color:var(--muted); font-size:14px; line-height:1.75; }
@@ -216,6 +229,7 @@ h1 em { color:transparent; -webkit-text-stroke:1px rgba(255,255,255,.82); font-s
   .about-grid,.jack-intro,.faq-grid { grid-template-columns:1fr; gap:55px; }
   .jack-collage { min-height:600px; }
   .guide-grid { grid-template-columns:1fr; }
+  .home-story-grid { grid-template-columns:1fr; }
   .guide-feature { grid-row:auto; }
   .guide-feature,.guide-card { grid-template-columns:1fr 1.05fr; }
   .guide-feature .guide-thumb { min-height:280px; }
@@ -258,6 +272,7 @@ h1 em { color:transparent; -webkit-text-stroke:1px rgba(255,255,255,.82); font-s
   .jack-collage-main { inset:0 8% 5% 0; }
   .jack-collage-sub { width:42%; border-width:5px; }
   .guide-feature,.guide-card { grid-template-columns:1fr; }
+  .home-story-card { min-height:270px; }
   .guide-thumb,.guide-feature .guide-thumb { min-height:270px; }
   .guide-body { min-height:230px; }
   .store-cta { min-height:640px; background-position:65% center; }
